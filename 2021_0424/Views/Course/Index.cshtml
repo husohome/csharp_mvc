@@ -1,0 +1,21 @@
+﻿
+@using Apr24_.Models;
+@model IEnumerable<Course> 
+
+<h2>Index</h2>
+
+<ul>
+
+    @*foreach (var c in ViewData["courses"] as List<Course>)*@
+
+    @*foreach( var c in ViewBagcourse as List<Course>) <- 記得轉型!!*@
+    @foreach(var c in Model)
+    {
+        <li>ID: @c.courseID </li>
+        <li>Title: @c.courseTitle</li>
+        <hr />
+
+    }
+    @* 這是注意Model大寫 *@
+
+</ul>
