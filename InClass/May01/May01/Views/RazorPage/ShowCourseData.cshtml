@@ -47,6 +47,14 @@
         @Html.LabelFor(m => m.ServiceEmail); @Html.DisplayTextFor(m => m.ServiceEmail); <br />
     </div>
 
+    <div class="row">
+        <h5>用TextBoxFor, ... CheckBoxFor, DropDownListFor, ...(也可以不用For的版本) 自行決定input type</h5>
+        <!--用for 系列配 lambda compiler可以幫忙除錯-->
+        @Html.LabelFor(m => m.Code); @Html.TextBoxFor(m => m.Code); <br />
+        @Html.Label("Name"); @Html.TextAreaFor(m => m.Name); <br />
+        @Html.LabelFor(m => m.ServiceEmail); @Html.TextBoxFor(m => m.ServiceEmail); <br />
+    </div>
+
 </div>
 
 
