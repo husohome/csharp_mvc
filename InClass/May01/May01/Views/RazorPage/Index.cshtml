@@ -9,28 +9,103 @@
 
 <h2>Index</h2>
 
+<div class="container
+    <div class="row">
 
-@hi
-@num
+        @hi
+        @num
 
-@{ 
-    var BMI = 30;
+        @{
+            var BMI = 30;
+
+        }
+    </div>
+    <div class="row">
+        @if (BMI >= 30)
+        {
+
+            <p> BMI: @BMI, 你真的有點胖</p>
+        }
+        else if (BMI >= 25)
+        {
+
+            <p> BMI: @BMI 你有點胖 </p>
+        }
+        else
+        {
+
+            <p> BMI: @BMI, 你走開 </p>
+        }
+    </div>
+    <div class="row">
+        <!--這樣也可以-->
+        @{
+
+            if (BMI >= 30)
+            {
+
+                <p> BMI: @BMI, 你真的有點胖</p>
+            }
+            else if (BMI >= 25)
+            {
+
+                <p> BMI: @BMI 你有點胖 </p>
+            }
+            else
+            {
+
+                <p> BMI: @BMI, 你走開 </p>
+            }
+
+        }
+    </div>
+    <div class="row">
+        <!-- switch case-->
+        @{
+                var a = "A";
+                switch(a) {
+                    case "A":
+                            <p> Hi A</p>
+                        break;
+                    case "B":
+                            <p> hi B</p>
+                            break;
+                    default:
+                        <p> else?</p>
+                        break;
+
+
+                }
+        }
+    </div>
+
+@{
+        var data = new [] {
+            new {id=1, name="HIHI" },
+            new {id=2, name="HIHIHIH" },
+            new { id = 3, name = "HIHIHIHI" }
+        };
+
+   <table class="table">
+        <thead>
+
+        </thead>
+        <tbody>
+            @foreach (var e in data) {
+                <tr>
+                    <td>@e.id;</td> <!-- e["id"] didn't work-->
+                    <td>@e.name;</td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
 
 }
 
-@if (BMI >= 30)
-{
 
-    <p> BMI: @BMI, 你真的有點胖</p>
-}
-else if (BMI >= 25)
-{
+</div>
 
-    <p> BMI: @BMI 你有點胖 </p>
-}
-else { 
 
-    <p> BMI: @BMI, 你走開 </p>
-}
 
 
