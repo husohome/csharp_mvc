@@ -85,6 +85,17 @@
     </div>
 
 
+    <div class="row">
+        <h5>使用自訂的helper</h5>
+
+        @helper DisplayTitle(string title) { 
+            <h1>@title </h1>
+        }
+
+        @DisplayTitle("Hihi")
+
+    </div>
+
 </div>
 
 
