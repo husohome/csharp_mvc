@@ -87,14 +87,25 @@
 
     <div class="row">
         <h5>使用自訂的helper</h5>
-
-        @helper DisplayTitle(string title) { 
+        <!-- 可以再利用重複的UI邏輯-->
+        @helper DisplayTitle(string title)
+        {
             <h1>@title </h1>
         }
 
         @DisplayTitle("Hihi")
 
     </div>
+
+    <div class="row">
+        <h5>使用其他頁面自訂的helper</h5>
+        <!-- 可以再利用重複的UI邏輯--> <!-- 注意不要撞名-->
+        @GlobalHtmlHelpers.DisplayTitle3("Hihi")
+        @GlobalHtmlHelpers.DisplayTitle6("Hihi")
+
+    </div>
+
+
 
 </div>
 
