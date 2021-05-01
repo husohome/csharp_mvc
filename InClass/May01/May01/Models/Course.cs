@@ -15,10 +15,13 @@ namespace May01.Models
             this.Name = name;
             this.ServiceEmail = email;
         }
+
         [Display(Name="課程代碼")]
+        [Required(ErrorMessage ="請輸入課程代碼(必填")]
         public string Code { get; set; }
 
         [Display(Name="課程名稱")]
+        [Required(ErrorMessage = "請輸入課程名稱(必填")]
         public string Name { get; set; }
 
         [Display(Name="E-mail")]

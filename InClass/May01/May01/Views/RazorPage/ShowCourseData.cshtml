@@ -77,6 +77,21 @@
     </div>
 
     <div class="row">
+        <h5>用using(BeginForm)產生表單之後，用validation messages驗證(省掉js)</h5>
+        @using (Html.BeginForm())
+        {
+
+            @Html.LabelFor(m => m.Code); @Html.TextBoxFor(m => m.Code); @Html.ValidationMessageFor(m => m.Code)<br />
+            @Html.Label("Name"); @Html.TextBoxFor(m => m.Name); @Html.ValidationMessageFor(m => m.Name)<br />
+            @Html.LabelFor(m => m.ServiceEmail); @Html.TextBoxFor(m => m.ServiceEmail); @Html.ValidationMessageFor(m => m.ServiceEmail)<br />
+            <input type="submit" value="送出" />
+            @Html.ValidationSummary(); <!--通常與validation messages 擇一使用 -->
+
+        }
+    </div>
+
+
+    <div class="row">
         <h5>用ActionLink做簡單的資料維護</h5>
         @Html.ActionLink("檢視", "ViewCourse", "Course");
         @Html.ActionLink("新增", "AddCourse", "Course", new { id = Model.Code }); <!--使用匿名物件傳參數-->
