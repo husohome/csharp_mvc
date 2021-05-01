@@ -7,19 +7,29 @@
     </div>
 
     <div class="row">
-        <!--好像會直接拿model-->
+        <h5>用DisplayName和Display顯示資料</h5>
+        <!--會直接拿model-->
         @Html.DisplayName("Code"); @Html.Display("Code"); <br />
         @Html.DisplayName("Name"); @Html.Display("Name"); <br />
         @Html.DisplayName("ServiceEmail"); @Html.Display("ServiceEmail"); <br />
     </div>
 
-    <!--用for 系列配 lambda compiler可以幫忙除錯-->
+
     <div class="row">
+        <h5>用DisplayNameFor和DisplayFor配lambda顯示資料</h5>
+        <!--用for 系列配 lambda compiler可以幫忙除錯-->
         @Html.DisplayNameFor(m => m.Code); @Html.DisplayFor(m => m.Code); <br />
         @Html.DisplayNameFor(m => m.Name); @Html.DisplayFor(m => m.Name); <br />
         @Html.DisplayNameFor(m => m.ServiceEmail); @Html.DisplayFor(m => m.ServiceEmail); <br />
     </div>
 
+    <div class="row">
+        <h5>用DisplayTextFor和DisplayFor配lambda顯示資料(變成純文字)</h5>
+        <!--用for 系列配 lambda compiler可以幫忙除錯-->
+        @Html.DisplayNameFor(m => m.Code); @Html.DisplayTextFor(m => m.Code); <br />
+        @Html.DisplayNameFor(m => m.Name); @Html.DisplayTextFor(m => m.Name); <br />
+        @Html.DisplayNameFor(m => m.ServiceEmail); @Html.DisplayTextFor(m => m.ServiceEmail); <br />
+    </div>
 
 
 
