@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Facebook Login Page</title>
+    <style>
+
+        body {
+            font-family: "新細明體";
+            font-size: 1.2em;
+            background-color: lightgrey;
+        }
+        a {
+            text-decoration: none;
+        }
+
+        .filler {
+            width:100%;
+            height:20%;
+        }
+
+        .panelRight {
+
+            padding: 4px;
+            align-content: center;
+        }
+
+        .panelLeft {
+            margin: 2em;
+
+            padding: 5px;
+            align-content: flex-start;
+        }
+
+        .loginForm {
+            box-sizing: border-box;
+            box-shadow: 4px 4px;
+            background-color: white;
+            padding: 4px;
+            margin: 3px;
+        }
+
+            .loginForm * {
+                margin: 10px;
+
+            }
+
+        .textBox, .divider {
+            border: solid 1px grey;
+            color: grey;
+            border-radius: 4px;
+            width: 90%;
+        }
+
+        .fbBlueText {
+            color: #166fe5;
+        }
+
+        .fbBlueBackground {
+            background-color: #166fe5;
+        }
+
+        .fbGreenBackground {
+            background-color: #36a420;
+        }
+
+        .bigText {
+            font-size: 1.6em;
+        }
+
+        .mediumText {
+            font-size: 1.15em;
+        }
+
+        .smallText {
+            font-size: .7em;
+        }
+
+        .mainButton, .secondaryButton {
+            width: 100%;
+            border: 1px solid #36a420;
+        }
+
+        .mainButton {
+            padding: 4px;
+            width: 100%;
+            border: 1px solid #166fe5;
+        }
+
+        .roundedCorners {
+            border-radius: 5px;
+
+        }
+
+
+
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <div class="filler">
+
+
+        </div>
+    </header>
+    <article>
+
+
+        <section>
+            <table>
+                <tr>
+                    <td>
+                        <div class="panelLeft">
+
+                            <img src="https://i.imgur.com/CFwzltI.png" alt="Facebook Logo" />
+                            <p class="descriptionText bigText">
+                                Facebook，讓你和親朋好友保持聯繫，隨時分享生活中的每一刻
+                            </p>
+                        </div>
+                    </td>
+
+                    <td>
+                        <div class="panelRight">
+                            <div class="loginForm roundedCorners">
+                                <form action="#" method="post">
+                                    <input class="textBox mediumText roundedCorners" type="text" placeholder="Email Address or Mobile Phone" required />
+                                    <input class="textBox mediumText roundedCorners" type="password" placeholder="Password" required />
+                                    <input class="mainButton fbBlueBackground mediumText" type="submit" value="Logn" />
+                                    <a class="smallText fbBlueText " href="#">Forgot Password?</a>
+                                    <hr class="divider" />
+                                    <input class="secondaryButton fbGreenBackground mediumText roundedCorners" type="button" value="Create a New Account" />
+                                    <p class="descriptionText">
+                                        <strong><a class="smallText" href="#">Create Facebook Pages</a></strong> for celebrities, organizations or companies.
+                                    </p>
+                                </form>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table
+        </section>
+    </article>
+    <footer>
+
+
+    </footer>
+
+</body>
+</html>

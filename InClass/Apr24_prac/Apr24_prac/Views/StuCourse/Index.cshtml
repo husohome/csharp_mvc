@@ -1,0 +1,39 @@
+﻿
+@using Apr24_prac.Models
+@model List<StuCourse>
+
+<h2>Index</h2>
+
+<div class="container">
+
+    @if (Model != null)
+    {
+        foreach (var m in Model)
+        {
+            if (m != null)
+            {
+                if (m.student != null)
+                {
+                    <strong>@m.student.id </strong><h5>Student: @m.student.name</h5>
+                }
+
+                if (m.courses != null)
+                {
+                    foreach (var c in m.courses) { 
+                    
+                        <label> @c.id </label>
+                        <label> @c.name </label>
+                        <hr />
+                    }
+                }
+
+
+            }
+
+
+        }
+    }
+
+
+
+</div>

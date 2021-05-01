@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+      <style>
+
+        body {
+            padding-left: 7em;
+            padding-right: 7em;
+            font-family: 'Segoe UI';
+            font-size: .95em;
+            background-image: url("https://www.transparenttextures.com/patterns/clean-gray-paper.png"), linear-gradient(90deg, rgba(34,195,150,0.8743698162858894) 34%, rgba(185,253,45,0.3169468470982143) 91%);
+            background-repeat: repeat;
+        }
+
+          body * {
+          
+            box-sizing: border-box;
+          }
+
+        article {
+            padding: 0px;
+            margin: 0px;
+            display: flex;
+            flex-wrap: wrap;
+            background: rgba(255,255,255,.4);
+            justify-items: safe center;
+            box-shadow: .3em .3em 3;
+        }
+
+        div {
+            padding: 1.2em;
+        }
+
+        li {
+            list-style: none;
+            padding: .5em;
+        }
+
+
+        fieldset {
+            border: none;
+            padding: 2em;
+            width: 100%;
+        }
+
+        header > div {
+            background: none;
+            border-radius: 4px;
+        }
+
+        h1 {
+            font-weight: 400;
+        }
+
+        .light_weight {
+            font-size: .6em;
+            font-weight: 300;
+        }
+
+        p {
+            align-self: safe center;
+        }
+
+        .button, a {
+            padding: 1.2em;
+            letter-spacing: 1px;
+            border: 1px solid rgba(185,253,45,0.3169468470982143);
+            background-color: rgba(34,195,150,0.8743698162858894);
+            color: aliceblue;
+            box-shadow: .3em .3em 1;
+            border-radius: 9px;
+        }
+
+        a {
+            text-decoration: none;
+            background-color: rgba(34,195,150,0.1);
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <div class="header">
+            <h1><strong>Contact Contoso Conferencing</strong></h1>
+        </div>
+        <div>
+            <h1 class="light_weight">Contoso Conferencing Ltd. </h1>
+        </div>
+
+    </header>
+    <nav>
+
+    </nav>
+    <article>
+        <section>
+            <div>
+                <p class="address">
+                    123 South Street <br />
+                    Somewhere <br />
+                    Over there <br />
+                    <em>USA</em>
+
+                </p>
+            </div>
+            <div>
+                <a href="mailto:contact@contoso.com">contact@contoso.com </a>
+            </div>
+        </section>
+        <section>
+            <div>
+                <p>If you would like to conctact Contoso Conferencing, whether you're interested in our services or in a conference we are currently organizing, don't hesitate to contact us using our inquiry form (<b>Bold fields</b>are required.)</p>
+            </div>
+            <form action="#" method="post">
+                <div class="form_container">
+                    <fieldset>
+                        <legend>System Sign Up</legend>
+                        <ul>
+                            <li>
+                                <b>Account</b>
+                            </li>
+                            <li>
+                                <input type="text" placeholder="Please input User Name" required />
+                            </li>
+                            <li>
+                                <b>Password</b>
+                            </li>
+                            <li>
+                                <input type="password" placeholder="Please input Password" required />
+                            </li>
+                            <li>
+                                <input type="checkbox" name="keepmyinfo" />
+                                <label>Keep My Info</label>
+                            </li
+                        </ul>
+                    </fieldset>
+
+                    <input type="submit" value="send" class="button" />
+
+
+                </div>
+            </form>
+
+        </section>
+    </article>
+
+</body>
+</html>

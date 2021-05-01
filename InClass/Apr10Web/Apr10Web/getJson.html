@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+</head>
+<body onload="largerThen60Version3(40);">
+
+    <script>
+
+        function display() {
+            let d = document.getElementById("promiseDisplay");
+            d.innterText = playingWithPromise();
+
+        }
+
+        function playWithPromise() {
+            const myPromise = new Promise(
+                (resolve, reject) => { 
+
+                    setTimeout(
+                        () => { resolve("hihi"); }, 3000
+                    );
+                    
+                } // by convention, these are named "resolve" and "reject"
+            );
+
+            return myPromise.then(
+                value => { return value; } // success
+            );
+        }
+
+        function largerThen60(n) {
+            const pms = new Promise( 
+                (resolve, reject) => {
+
+                    if (typeof n == "number") {
+                        if (n > 60)
+                            resolve("yay! the number is greater than 60");
+                    }
+
+                    reject("The number isn't greater than 60 or it's not a number");
+                }
+            )
+      
+        return pms.then(
+                value => { alert(value) },
+                value => { alert(value) }
+            )
+        }
+
+
+        function largerThen60Version2(n) {
+            const pms = new Promise(
+                (resolve, reject) => {
+
+                    if (typeof n == "number") {
+                        if (n > 60)
+                            resolve("yay! the number is greater than 60");
+                    }
+
+                    reject("The number isn't greater than 60 or it's not a number");
+                }
+            )
+
+            return pms;
+        }
+
+
+        function callLargerThen60Version2(n) {
+            return largerThen60Version2(n).then(
+                value => alert(value),
+                value => alert(value)
+            );
+        }
+
+        function largerThen60Version3(n) {
+            const pms = new Promise(
+                (resolve, reject) => {
+
+                    if (typeof n == "number") {
+                        if (n > 60)
+                            resolve("yay! the number is greater than 60");
+                    }
+
+                    reject("The number isn't greater than 60 or it's not a number");
+                }
+            )
+
+            function onSuccess(value) {
+                alert(value);
+            }
+
+            function onFailure(value) {
+                alert(value);
+
+            }
+
+            return pms.then(onSuccess, onFailure);
+
+        }
+
+
+    </script>
+
+</body>
+</html>

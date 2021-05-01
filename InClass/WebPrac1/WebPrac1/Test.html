@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <style>
+
+        body {
+        
+            font-family: 'Segoe UI';
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around
+        }
+
+        .tag {
+            background-color: #85ae95;
+            border-radius: 3px;
+            color: whitesmoke;
+            text-align: center;
+            padding: 2px;
+        }
+
+        .container input {
+            background-color: whitesmoke;
+            border-radius: 4px;
+            border-width: 0px;
+            box-shadow: none;
+            font-size: 1.2em;
+            margin: auto;
+        }
+
+        a {
+            padding: 5px;
+            margin: 3px;
+            border-radius: 3px;
+            border: 1px solid #85ae95;
+            color: #85ae95;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: mediumseagreen;
+            border: 1px solid mediumseagreen;
+        }
+
+        li {
+            list-style: none;
+
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <form action="#" method="post">
+            <div class="tag"> Colour </div> <input type="color" />
+            <p />
+            <div class="tag"> Date </div> <input type="date" />
+            <p />
+            <div class="tag"> Datetime </div> <input type="datetime" />
+            <p />
+            <div class="tag"> DatetimeLocal </div> <input type="datetime-local" />
+            <p />
+            <div class="tag"> Number </div> <input type="number" max="100" min="0" step="20" />
+            <p />
+            <div class="tag"> E-mail </div> <input type="email" placeholder="xxx@xxx.xx" />
+            <p />
+            <div class="tag"> Tel </div> <input type="tel" dir="rtl" />
+            <p />
+            <div class="tag"> Url </div> <input type="url" />
+            <p />
+            <div class="tag"> City (DataList)</div>
+            <input type="text" list="CityList" />
+            <datalist id="CityList">
+                <option label="Taipei" value="0" />
+                <option label="Taichung" value="1" />
+                <option label="Tainan" value="2" />
+            </datalist>
+            <p />
+            <div class="tag"> City (Select)</div>
+            <select>
+                <option label="Taipei" value="0" />
+                <option label="Taichung" value="1" />
+                <option label="Tainan" value="2" />
+            </select>
+            <p />
+            <div class="tag"> City (Select with optgroups)</div>
+            <select>
+                <optgroup label="Taipei">
+                    <option label="Taipei" value="0" />
+                </optgroup>
+                <optgroup label="Other cities">
+                    <option label="Taichung" value="1" />
+                    <option label="Tainan" value="2" />
+                </optgroup>
+            </select>
+            <p />
+            <div class="tag"> City (Radio Buttons)</div>
+            <input type="radio" name="cityRadio" value="0" />
+            <label>Taipei</label>
+            <input type="radio" name="cityRadio" value="1" />
+            <label>Taichung</label>
+            <input type="radio" name="cityRadio" value="2" />
+            <label>Tainan</label>
+            <p />
+            <div class="tag"> City (Checkboxes)</div>
+            <input type="checkbox" name="cityCheckBox" value="0" />
+            <label>Taipei</label>
+            <input type="checkbox" name="cityCheckBox" value="1" />
+            <label>Taichung</label>
+            <input type="checkbox" name="cityCheckBox" value="2" />
+            <label>Tainan</label>
+            <p />
+            <div class="tag">Hyper Links</div>
+            <a href="https://hackmd.io/"> Stay on the same page </a>
+            <a href="https://hackmd.io/" target="_blank"> In a new tab </a>
+            <a href="https://hackmd.io/" target="_self"> Specifying _self</a>
+            <a href="/Test.html"> Something in the RootFolder</a>
+            <p />
+            <div class="tag">Unordered List</div>
+            <ul>
+                <li>Taipei</li>
+                <li>Taichung</li>
+                <li>Tainan</li>
+            </ul>
+            <p />
+            <div class="tag">Ordered List</div>
+            <ol>
+                <li>Taipei</li>
+                <li>Taichung</li>
+                <li>Tainan</li>
+            </ol>
+            <p />
+            <div class="tag">Description List</div>
+            <dl>
+                <dt>Taipei</dt>
+                <dd>Taipei</dd>
+                <dt>Other Cities</dt>
+                <dd>Taichung</dd>
+                <dd>Tainan</dd>
+            </dl>
+            <p />
+            <div class="tag">Some Image</div>
+            <img src="https://images.squarespace-cdn.com/content/v1/52e1b262e4b06ef060506756/1568644386677-SJGPE3UI0QRLVFE2GK8G/ke17ZwdGBToddI8pDm48kGwqNa-TSATgABi909OK27Z7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UQSxQa_pE67Ig1CszvlZo11NCLvqIlshiNC_JCcjnOmqOV4zqrbdg_2AqIEjj1Z3Fg/Hero.jpg?format=1500w" alt="when the image dies, this is shown instead" width="300" />
+            <img src="" alt="when the image dies, this is shown instead" />
+
+            <div class="tag"> You can only input digits here</div>
+            <input type="text" pattern="[0-9]+" />
+            
+            <input type="submit" />
+
+            <fieldset>
+                <legend><strong>City (Using Fieldset)</strong></legend>
+                <ul>
+                    <li>Taipei</li>
+                    <li>Taichung</li>
+                    <li>Tainan</li>
+                </ul>
+                <div>
+
+                </div>
+                <div>
+                    <textarea rows="10" cols="30"> </textarea>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+
+
+</body>
+</html>

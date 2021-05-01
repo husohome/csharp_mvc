@@ -1,0 +1,10 @@
+from the system.IO namespace
+Common operations include (with names that are pretty straightforward)
+
+    File.Exists(filePath): test if it exists
+    File.Delete(filePath)
+    File.WriteAllLines(filePath, string[]to write): overwrites the file
+    File.AppendAllLines(filePath, string[]to append)
+    File.Copy(filePath, targetPath, whether to overwrite)
+        If the third param is false, it will raise an IOException if file already exists.
+

@@ -1,0 +1,37 @@
+﻿
+@using Apr24_.Models
+@model IEnumerable<StudentCourseViewModel>
+
+<h2>Index</h2>
+
+
+<div class="container">
+
+    @foreach (var m in Model)
+    {
+        if (m != null)
+        {
+    <div class="card">
+        @if(m.student!=null) {
+        <h4>@m.student.stuName </h4>
+        <hr />
+        <label>@m.student.stuID</label>
+            if(m.coursesTaken != null) {
+                foreach (var c in m.coursesTaken)
+                {
+
+                    <h5> @c.courseTitle</h5>
+                    <label> @c.courseID </label>
+                    <hr />
+
+                }
+            }
+
+        }
+    </div>
+        }
+
+    }
+
+</div>
+

@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+
+        .flex {
+            display: flex;
+            //border: 1px solid lightgrey;
+        }
+
+        .flex-start {
+            justify-content: flex-start;
+        }
+
+        .flex-end {
+            justify-content: flex-end;
+        }
+
+        .space-between {
+            justify-content: space-between;
+        }
+
+        .space-around {
+            justify-content: space-around;
+        }
+
+        .space-evenly {
+            justify-content: space-evenly;
+        }
+
+        .center {
+            justify-content: center;
+        }
+
+        .safe-center {
+            justify-content: safe center;
+        }
+
+        .unsafe-center {
+            justify-content: unsafe center;
+        }
+
+        .card {
+            width: 300px;
+            border: 1px solid lightslategrey;
+            border-radius: 5px;
+            color: darkslategrey;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        .strong {
+            font-weight: 600;
+        }
+    </style>
+    <script>
+
+        function printCourseInfo(courseName) {
+            let n = document.getElementsByName(courseName);
+            alert(
+                "課程名稱:" + n[0].innerText + "\n" +
+                "課程內容:" + n[1].innerText + "\n" +
+                "開課日期:" + n[2].innerText
+            );
+
+        }
+
+        function courseSelected(cardID) {
+            let n = document.getElementsById(cardID);
+            n.style.borderColor = "seagreen";
+        }
+
+        function courseUnselected(cardID) {
+            let n = document.getElementsById(cardID);
+            n.style.borderColor = "lightslategrey";
+        }
+
+        function __init__() {
+            let n = document.querySelectorAll("input[type = button]");
+            for (i; i < n.length; i++) {
+                n[i].addEventListener("click", printCourseInfo)
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <div class="flex">
+        <div class="card" onmouseover="courseSelected('card1')" onmouseout="courseUnselected('card1')">
+            <div name="c1">
+                Some course title 1
+            </div>
+            <img src="https://i.imgur.com/5XWzGyi.png" />
+            <div name="c1">
+                Som1e content 1 Some content  Some content1
+            </div>
+            <div name="c1">
+                2021/03/20 - 2021/03/21
+            </div>
+            <input type="button" name="c1" value=" 登記課程 " onclick="printCourseInfo('c1');" />
+
+        </div>
+        <div class="card" onmouseover="courseSelected('card2')" onmouseout="courseUnselected('card2')">
+            <div name="c2">
+                Some course title 2
+            </div>
+            <img src="https://i.imgur.com/snqt4hE.png" />
+            <div name="c2">
+                Some c2ontent  Some c2ntent  Some content2
+            </div>
+            <div name="c2">
+                2021/03/20 - 2021/03/29
+            </div>
+            <input type="button" name="c2" value=" 登記課程 " onclick="printCourseInfo('c2')"/>
+
+        </div>
+
+    </div>
+</body>
+</html>

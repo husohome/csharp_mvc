@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+
+            <img src="@Url.Action("GetPic")" style="width:400px; height:auto;">
+        </div>
+    </div>
+
+    <input type="button" value="嗨" id="btnSayHi"> </input>
+    @Html.ActionLink("用RedirectAction叫RedirectToOtherSite", "RedirectAction")
+    @Html.ActionLink("用RedirectThruURL叫RedirectToOtherSite", "RedirectThruURL")
+    @Html.ActionLink("RedirectToOtherSite (Redirect Permanent)", "RedirectToOtherSite")
+    
+
+
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+
+
+<script>
+
+    $("#btnSayHi").click(function () {
+        $.ajax(
+            {
+                type: "POST",
+                url: "SayHi",
+                contentType: "application/plain; charset=utf-8",
+                dataType: "txt",
+                success: function (response) {
+                    alert(response)
+                },
+                failure: function (response) {
+                    alert(response.text)
+                },
+                error: function (response) {
+                    alert(response.responseText)
+                }
+
+
+            }
+
+
+        )
+
+
+
+    }
+    );
+
+
+</script>

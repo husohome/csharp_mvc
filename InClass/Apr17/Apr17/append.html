@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <input id="append" type="button" value="append something" />
+    <div id="toAppended"></div>
+    <hr />
+    <input id="remove" type="button" value="remove bad memories" />
+    <input id="changeStyle" type="button" value="change style" />
+    <input id="loadDataLoad" type="button" value="load data using load()" />
+    <input id="loadDataAjax" type="button" value="load data using $.ajax()" />
+    <input id="loadDataGetJson" type="button" value="load data using $.getJSON()" />
+    <input id="loadDataGetJsonToDom" type="button" value="load data using $.getJSON() and output in html as DOM" />
+    <div class="a">
+        asdasd
+    </div>
+    <div class="a">
+        asdasd
+    </div>
+    <label> some label</label>
+    <label> another label</label>
+
+
+    <div id="toRemove">
+        <div>
+            some bad memmories
+        </div>
+        <div>
+            asdsad
+        </div>
+
+    </div>
+
+    <div id="toLoadDataGetJsonToDom">
+
+    </div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+<script>
+
+    var url = "https://opendata.epa.gov.tw/ws/Data/AQI/?$format=json&callback=?";
+
+    $(document).ready(function () {
+        $("#append").click(function () {
+            $("#toAppended").append("<div>hello!</div>");
+        });
+
+        $("#remove").click(function () {
+            $("#toRemove").remove();
+        });
+
+        $("#changeStyle").click(function () {
+
+            $(".a").css({
+                'color': 'seagreen',
+                'border': '1px solid'
+            });
+            $("label").css({
+                'color': 'seagreen',
+                'border': '1px solid'
+            });
+
+
+        });
+
+
+        $("#loadDataLoad").click(function () {
+            $("#toLoadDataLoad").load(
+                url, //用load (封裝過的.ajax) 會有跨域存取問題
+                function (responseTxt, statusTxt, xhr) {
+                    if (statusTxt == "success")
+                        alert("success!");
+                    if (statusTxt == "error")
+                        alert("Error: " + xhr.status + ": " + xhr.statusText);
+                }
+            )
+        });
+
+        $("#loadDataAjax").click(function () {
+            // $.ajax 是jQuery包裝的javascript的Promise; 用來處理非同步作業
+            $.ajax(
+                {
+                    url: url,
+                    dataType: 'jsonp', // this helps bypass COR (避免跨域存取問題!)
+                    success: function (result) {
+                        // using javascript
+                        //for (entry of result) {
+                        //   console.log(entry);
+                        //}
+                        // using jQuery function .each ~ like enumerate() in python
+                        $.each(result, function (index, item) {
+                            console.log(item);
+                        })
+                    },
+                    error: function () {
+                        alert("error!");
+                    }
+
+                }
+            )
+
+        }
+        );
+
+        $("#loadDataGetJson").click(function () {
+            $.getJSON(url, function (result) {
+
+                $.each(result, function (index, item) {
+                    console.log(item);
+                })
+                }
+            )
+        });
+
+        $("#loadDataGetJsonToDom").click(function () {
+            $.getJSON(url, function (result) {
+                $.each(result, function (index, item) {
+                    console.log(item.AQI);
+                    $("#toLoadDataGetJsonToDom").append("<div>" + item.SiteName + item.AQI + item.Status + "</div>");
+                });
+            });
+        });
+
+
+
+    })
+;
+</script>
+</html>

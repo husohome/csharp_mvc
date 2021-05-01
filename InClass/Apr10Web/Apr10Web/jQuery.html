@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+<style>
+
+    .green {
+        color: cadetblue;
+    }
+
+    .large-text {
+        font-size: 3em;
+    }
+
+
+
+
+</style>
+<body>
+
+    <div id="test">
+
+        hihihihihih<b>hihihihihi</b>hihi
+
+    </div>
+
+    <input type="button" id="showText" value="Show Text" />
+    <input type="button" id="showHtml" value="Show Html" />
+    <input type="button" id="replaceText" value="Replace with Hello" />
+    <input type="button" id="replaceHtml" value="Replace with Hello (html)" />
+    <input type="button" id="changeCSS" value="change CSS (border)" />
+    <input type="button" id="addCSSClass" value="add CSS class" />
+    <input type="button" id="removeCSSClass" value="remove CSS class" />
+    <input type="button" id="changeAttribute" value="change attribute" />
+    <input type="button" id="append" value="append hihihi using append()" />
+    <input type="button" id="appendTo" value="append hihihi using appendTo()" />
+
+    <script>
+
+        $("#showText").click(
+            function () {
+                alert($("#test").text());
+            }
+
+        )
+
+        $("#showHtml").click(
+            function () {
+                alert($("#test").html());
+            }
+
+        )
+
+        $("#replaceText").click(
+            () => {
+                $("#test").text("Hello! .text() can be used to set text. but tags <b>won't</b> work ");
+            }
+        )
+
+        $("#replaceHtml").click(
+            () => {
+                $("#test").html("Hello! .html() can be used to set html and tags <b>do</b> work ");
+            }
+        )
+
+        $("#changeCSS").click(
+            () => {
+                $("#test").css("border", "1px solid cadetblue");
+            }
+        )
+
+        $("#addCSSClass").click(
+            () => {
+                $("#test").addClass("green large-text"); // appending to the rightmost of style
+            }
+        )
+
+        $("#removeCSSClass").click(
+            () => {
+                $("#test").removeClass("green");
+            }
+        )
+
+        $("#changeAttribute").click(
+            () => {
+                //alert($("#test").attr());
+                $("#test").attr("name", "new_name");
+                //alert($("#test").attr());
+
+            }
+        )
+
+        $("#append").click(
+            () => {
+                $("#test").append("<b>hihihi</b>")
+            }
+        )
+
+        $("#appendTo").click(
+            () => {
+                $("<b>hihihi</b>").appendTo($("#test"));
+                // you need to wrap the html syntax in $() to make it an object that has the method appendTo
+            }
+        )
+
+
+    </script>
+</body>
+</html>
