@@ -62,30 +62,31 @@
     <div class="row">
         <!-- switch case-->
         @{
-                var a = "A";
-                switch(a) {
-                    case "A":
+            var a = "A";
+            switch (a) {
+                case "A":
                             <p> Hi A</p>
-                        break;
-                    case "B":
+                    break;
+                case "B":
                             <p> hi B</p>
-                            break;
-                    default:
+                    break;
+                default:
                         <p> else?</p>
-                        break;
+                    break;
 
 
-                }
+            }
         }
     </div>
 
 @{
-        var data = new [] {
+    var data = new[] {
             new {id=1, name="HIHI" },
             new {id=2, name="HIHIHIH" },
             new { id = 3, name = "HIHIHIHI" }
         };
 
+}
    <table class="table">
         <thead>
 
@@ -101,7 +102,28 @@
         </tbody>
     </table>
 
-}
+       <table class="table">
+        <thead>
+
+        </thead>
+        <tbody>
+            @{
+                var idx = 0;
+                while (idx < data.Length)
+                {
+                    <tr>
+                        <td>@data[idx].id;</td> <!-- e["id"] didn't work-->
+                        <td>@data[idx].name;</td>
+
+                    </tr>
+                    idx++;
+                }
+            }
+
+        </tbody>
+    </table>
+
+
 
 
 </div>
