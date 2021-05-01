@@ -76,7 +76,16 @@
         }
     </div>
 
+    <div class="row">
+        <h5>用ActionLink做簡單的資料維護</h5>
+        @Html.ActionLink("檢視", "ViewCourse", "Course");
+        @Html.ActionLink("新增", "AddCourse", "Course", new { id = Model.Code }); <!--使用匿名物件傳參數-->
+        @Html.ActionLink("編輯", "EditCourse", "Course", new { id = Model.Code });
+        @Html.ActionLink("刪除", "DeleteCourse", "Course", new { id = Model.Code });
     </div>
+
+
+</div>
 
 
 
