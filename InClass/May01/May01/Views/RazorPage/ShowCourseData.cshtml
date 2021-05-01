@@ -55,7 +55,30 @@
         @Html.LabelFor(m => m.ServiceEmail); @Html.TextBoxFor(m => m.ServiceEmail); <br />
     </div>
 
-</div>
+    <div class="row">
+        <h5>用using(BeginForm)產生表單</h5>
+        @using (Html.BeginForm("AddCourse", "Course", "POST"))
+        {
+
+            @Html.LabelFor(m => m.Code); @Html.TextBoxFor(m => m.Code); <br />
+            @Html.Label("Name"); @Html.TextBoxFor(m => m.Name); <br />
+            @Html.LabelFor(m => m.ServiceEmail); @Html.TextBoxFor(m => m.ServiceEmail); <br />
+            <input type="submit" value="送出" />
+        }
+    </div>
+
+    <div class="row">
+        <h5>用editorForModel直接自動產生所有欄位(順便包到表單裡)做簡單維護</h5>
+        @using (Html.BeginForm("AddCourse", "Course", "POST"))
+        {
+            @Html.EditorForModel();
+            <input type="submit" value="送出" />
+        }
+    </div>
+
+    </div>
+
+
 
 
 
