@@ -1,0 +1,41 @@
+﻿@using May15ORM.Models
+@model jobs
+
+<h2>Edit</h2>
+
+<div class="container" style="margin: 33px;">
+    @if (Model != null) {
+        using (Html.BeginForm("Update", "Jobs", FormMethod.Post))
+        { 
+
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(Model => Model.id);
+        <div class="card">
+
+            <h5 class="card-title">職位代碼 : @Html.EditorFor(Model => Model.code)</h5>
+            <h5 class="card-title">職位名稱 : @Html.EditorFor(Model => Model.name)</h5>
+            <h5 class="card-title">薪資範圍 : @Html.EditorFor(Model => Model.minsalary) ~ @Html.EditorFor(Model => Model.maxsalary) </h5>
+            <h5 class="card-title">工作地點 : @Html.EditorFor(Model => Model.joblocation)</h5>
+            <h5 class="card-title">工作內容 : @Html.EditorFor(Model => Model.desc)</h5>
+
+        </div>
+        <br />
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <input type="submit" class="btn btn-primary" value="儲存" />
+            @Html.ActionLink("回上一頁", "Query", "Jobs", null, new { @class = "btn btn-primary", @role = "button" })
+        </div>
+        }
+    } 
+    else{
+        <div class="card" style="width: 18rem;">
+
+            <div class="card-body">
+                <h2 class="card-title">Data missed</h2><br />
+
+            </div>
+
+        </div>
+    
+    }
+
+</div>
