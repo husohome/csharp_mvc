@@ -1,0 +1,41 @@
+﻿@using May15.Models
+@model JobModel
+
+<h2>Edit</h2>
+
+<div class="container">
+    @if (Model != null)
+    {
+
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(Model => Model.Id);
+        <div class="card">
+
+            <h5 class="card-title">職位代碼 : @Model.Code</h5>
+            <h5 class="card-title">職位名稱 : @Model.Name)</h5>
+            <h5 class="card-title">薪資範圍 : @Model.MinSalary) ~ @Model.MaxSalary) </h5>
+            <h5 class="card-title">工作地點 : @Model.JobLocation)</h5>
+            <h5 class="card-title">工作內容 : @Model.Desc)</h5>
+
+        </div>
+        <br />
+        <div class="btn-group" role="group" aria-label="Basic example">
+            @Html.ActionLink("刪除", "Del", "Job", new { id = @Model.Id} , new { @class = "btn btn-primary", @role = "button" })
+            @Html.ActionLink("回上一頁", "Query", "Job", null, new { @class = "btn btn-primary", @role = "button" })
+        </div>
+
+    }
+    else
+    {
+        <div class="card" style="width: 18rem;">
+
+            <div class="card-body">
+                <h2 class="card-title">查無資料</h2><br />
+
+            </div>
+
+        </div>
+
+    }
+
+</div>

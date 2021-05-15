@@ -8,17 +8,17 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{1E899F0A-E6B2-44C8-BBB4-A74D41AEA256}</ProjectGuid>
+    <ProjectGuid>{57222169-8820-4D1D-B553-5704446DAED1}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>May01</RootNamespace>
-    <AssemblyName>May01</AssemblyName>
+    <RootNamespace>May15</RootNamespace>
+    <AssemblyName>May15</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>44362</IISExpressSSLPort>
+    <IISExpressSSLPort>44378</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -120,19 +120,13 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\EmployeeController.cs" />
-    <Compile Include="Controllers\ErrorHandler.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\PassDataController.cs" />
-    <Compile Include="Controllers\RazorPageController.cs" />
-    <Compile Include="Controllers\ResultTypeController.cs" />
-    <Compile Include="Controllers\ValidationDataController.cs" />
+    <Compile Include="Controllers\JobController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Course.cs" />
-    <Compile Include="Models\Employee.cs" />
-    <Compile Include="Models\HireDateValidation.cs" />
+    <Compile Include="Models\JobModel.cs" />
+    <Compile Include="Models\JobService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -146,7 +140,6 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="App_Code\GlobalHtmlHelpers.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -172,18 +165,13 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\ErrorHandler\ErrorMessage.cshtml" />
-    <Content Include="Views\PassData\Index.cshtml" />
-    <Content Include="Views\ResultType\Index.cshtml" />
-    <Content Include="Views\RazorPage\Index.cshtml" />
-    <Content Include="Views\RazorPage\ShowCourseData.cshtml" />
-    <Content Include="Views\ValidationData\ValidationMessage.cshtml" />
-    <Content Include="Views\Employee\Index.cshtml" />
-    <Content Include="Views\Employee\CreateEmployee.cshtml" />
+    <Content Include="Views\Job\Index.cshtml" />
+    <Content Include="Views\Job\Add.cshtml" />
+    <Content Include="Views\Job\Edit.cshtml" />
+    <Content Include="Views\Job\View.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Imgs\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -214,9 +202,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>49958</DevelopmentServerPort>
+          <DevelopmentServerPort>49965</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44362/</IISUrl>
+          <IISUrl>https://localhost:44378/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
